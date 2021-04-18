@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% if title %}
+		<title>{{ title }}</title>
+	{% else %}
+		<title>Article</title>
+	{% endif %}
+
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<header>
+	<table class="table table-stripe">
+		<thead class="thead-dark">
+		<tr>
+			<th scope="col">
+				<a href="{% url 'hottop' %}"><input type="button" class="btn btn-primary btn-sm" value="Hot Topic"/></a>
+			</th>
+		
+			<th scope="col">
+				<a href="{% url 'official' %}"><button class="btn btn-primary btn-sm">Official</button></a>
+			</th>
+
+			<th scope="col">
+				<a href="{% url 'transfers' %}"><button class="btn btn-primary btn-sm">Transfers</button></a>
+			</th>
+			<th scope="col">
+				<a href="{% url 'about' %}"><button class="btn btn-primary btn-sm">About</button></a>
+			</th>
+		</tr>
+		</thead>
+	</table>
+</header>
+{% block content %}
+
+{% endblock %}
+</body>
+</html>
