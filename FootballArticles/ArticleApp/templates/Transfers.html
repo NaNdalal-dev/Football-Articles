@@ -1,22 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
+{% for data in allData %} 
 <div class="container">
 
-	<div>
 	<table class="card card-body bg-light">
 		<tr>
 			<td scope="row">
-				<img src="{{data.Thumbnail.url}}" class="img-thumbnail img-responsive" />
+				<img src="{{data.Thumbnail.url}}" class="img-fluid" width="250" height="250" />
 			</td>
 			<td>
 				<div class="container">
-				<header>
-					<a href="#" class="btn btn-link">
-					{{ data.Title }}
+					<a href="{%url 'transferswhole' data.id%}" class="btn btn-link">
+						<h6 class="lead">
+							{{ data.Title }}
+						</h6>
 					</a>
-				</header>
 				</div>
 				<br>
 				<div class="container">
@@ -25,11 +24,6 @@
 			</td>
 		</tr>
 	</table>
-	</div>
 </div>
-<div class="container">
-	{% for data in data.Article %}
-		{{ data }}<br><br>
-	{% endfor %}
-</div>
+{% endfor %}
 {% endblock %}

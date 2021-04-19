@@ -1,6 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
 
-Hottopic
+{% for data in allData %} 
+<div class="container">
 
+	<table class="card card-body bg-light">
+		<tr>
+			<td scope="row">
+				<img src="{{data.Thumbnail.url}}" class="img-fluid" width="250" height="250"/>
+			</td>
+			<td>
+				<div class="container">
+					<a href="{%url 'hottopWhole' data.id%}" class="btn btn-link">
+						<h6 class="lead">
+							{{ data.Title }}
+						</h6>
+					</a>
+				</div>
+				<br>
+				<div class="container">
+				<small class="text text-muted">{{ data.Date }}</small>	
+				</div>		
+			</td>
+		</tr>
+	</table>
+</div>
+{% endfor %}
 {% endblock %}
