@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="container">
+
+	<div>
+	<table class="card card-body bg-light">
+		<tr>
+			<td scope="row">
+				<img src="{{data.Thumbnail.url}}" class="img-thumbnail img-responsive" />
+			</td>
+			<td>
+				<div class="container">
+				<header>
+					<a href="#" class="btn btn-link">
+					{{ data.Title }}
+					</a>
+				</header>
+				</div>
+				<br>
+				<div class="container">
+				<small class="text text-muted">{{ data.Date }}</small>	
+				</div>		
+			</td>
+		</tr>
+	</table>
+	</div>
+</div>
+<div class="container">
+	{% for data in data.Article %}
+		{{ data }}<br><br>
+	{% endfor %}
+</div>
+{% endblock %}
