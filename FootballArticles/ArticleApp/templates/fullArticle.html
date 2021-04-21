@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <div class="container">
 
 	<table>
@@ -10,12 +11,12 @@
 			<td>
 				<div class="container">
 				<header>
-					<h3 class="text text-secondary">{{ data.Title }}</h3>
+					<h4 class="text text-secondary text-justify">{{ data.Title }}</h4>
 				</header>
 				</div>
 				<br>
 				<div class="container">
-				<small class="text text-muted">{{ data.Date }} / {{ data.Author }}</small>	
+				<small class="text text-muted text-justify">{{ data.Date }} / {{ data.Author }}</small>	
 				</div>		
 			</td>
 		</tr>
@@ -23,13 +24,15 @@
 </div>
 <br>
 <div class="container">
-	<article>
-	<p class="lead">
+	<article >
+	<p class="text-justify">
 		{% for data in data.Article %}
 		{{ data }}<br><br>
 		{% endfor %}
 	</p>
 	</article>
 </div>
+<hr>
+
 
 {% endblock %}
