@@ -47,5 +47,4 @@ def HotTopicWhole(request,link):
 	data.Article = data.Article.split('\n')
 	path = request.get_full_path()
 	title = data.Title
-	print(data.Article)
 	return render(request,'fullArticle.html',{'data':data,'path':path,'title':title,'c':c})

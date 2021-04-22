@@ -6,7 +6,7 @@
 	document.getElementById("{{c}}").style.background = '#ffffff' 
 	</script>
 {% endif %}
-<div class="container">
+<div class="container border border-success">
 
 	<table class="table">
 		<tr>
@@ -28,8 +28,6 @@
 			</td>
 		</tr>
 	</table>
-</div>
-<br>
 <div class="container">
 	<article>
 	<p class="text-justify">
@@ -41,11 +39,30 @@
 	</p>
 	</article>
 </div>
+</div>
+<div class="container">
+	<h3 class="text-justify text-info">Share</h3>
+	<a href="#" class="btn btn-link"><span class="fa fa-twitter"></span></a>
+	<a href="mailto:" class="btn btn-link"><span class="fa fa-envelope"></span></a>
+	<a href="#" class="btn btn-link"><span class="fa fa-whatsapp"></span></a>
+	<a href="#" class="btn btn-link"><span class="fa fa-facebook"></span></a>
+</div>
+<div class="container">
+	<a href="mailto:nd90981@gmail.com?subject=Report on:{{data.Title}}|{{data.id}}" target="_blank" class="btn btn-link">
+		<h5 class="text-justify text-danger far fa-envelope">Report an issue</h5>
+		<h5 class="text-justify text-danger fas fa-exclamation-triangle"></h5>
+	</a>
+	<br>
+	    <span onclick="window.print()" class="btn btn-info btn-sm fa fa-print">
+	    </span>
+</div>
+<br>
 <hr>
+
 <footer>
 	<div class="container">
-		
+		<h5 class="text text-muted text-justify fas fa-copyright">AllFootball App</h5>
 	</div>
-</footer>
 
+</footer>
 {% endblock %}
