@@ -6,6 +6,6 @@ def home(request):
 
 
 def about(request):
-	post = render(request,'about.html')
+	post = render(request,'about.html',{'title':'About'})
 	return post
 

@@ -1,12 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
-
+{% if c %}
+	<script>
+	document.getElementById("{{c}}").className = 'btn btn-link btn-sm'
+	document.getElementById("{{c}}").style.background = '#ffffff' 
+	</script>
+{% endif %}
 <div class="container">
 
-	<table>
+	<table class="table">
 		<tr>
 			<td scope="row">
-				<img src="{{data.Thumbnail.url}}"  class="img-fluid" width="200" height="150"/>
+				<div class="container-fluid">
+					<img src="{{data.Thumbnail.url}}" class="rounded mx-auto d-block  img-thumbnail" width="285" height="210" />
+				</div>
 			</td>
 			<td>
 				<div class="container">
@@ -24,15 +31,21 @@
 </div>
 <br>
 <div class="container">
-	<article >
+	<article>
 	<p class="text-justify">
 		{% for data in data.Article %}
-		{{ data }}<br><br>
+			{% if data != '\r' %}
+				{{ data }}<br><br>
+			{% endif %}
 		{% endfor %}
 	</p>
 	</article>
 </div>
 <hr>
-
+<footer>
+	<div class="container">
+		
+	</div>
+</footer>
 
 {% endblock %}

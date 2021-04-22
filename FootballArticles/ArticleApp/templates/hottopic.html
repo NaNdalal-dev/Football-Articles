@@ -1,25 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<script>
+	document.getElementById("c1").className = 'btn btn-link btn-sm'
+	document.getElementById("c1").style.background = '#ffffff' 
+</script>
 {% for data in allData %} 
 <div class="container">
 
 	<table class="card card-body bg-light">
 		<tr>
 			<td scope="row">
-				<img src="{{data.Thumbnail.url}}" class="img-fluid" width="250" height="250"/>
+				<img src="{{data.Thumbnail.url}}" class="rounded mx-auto d-block  img-thumbnail" width="285" height="210" />
 			</td>
 			<td>
 				<div class="container">
 					<a href="{%url 'hottopWhole' data.id%}" class="btn btn-link">
-						<h6 class="lead">
+						<h5 class="text-jusify">
 							{{ data.Title }}
-						</h6>
+						</h5>
 					</a>
 				</div>
 				<br>
 				<div class="container">
-				<small class="text text-muted">{{ data.Date }}</small>	
+				<small class="text text-muted">{{ data.Date }} / {{ data.Author }}</small>	
 				</div>		
 			</td>
 		</tr>

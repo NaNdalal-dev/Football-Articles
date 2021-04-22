@@ -6,7 +6,6 @@
 	{% else %}
 		<title>Article</title>
 	{% endif %}
-
  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -20,18 +19,18 @@
 		<thead class="thead-dark">
 		<tr>
 			<th scope="col">
-				<a href="{% url 'hottop' %}"><input type="button" class="btn btn-primary btn-sm" value="Hot Topic"/></a>
+				<a href="{% url 'hottop' %}"><input type="button" id='c1' class="btn btn-primary btn-sm" value="Hot Topic"/></a>
 			</th>
 		
 			<th scope="col">
-				<a href="{% url 'official' %}"><button class="btn btn-primary btn-sm">Official</button></a>
+				<a href="{% url 'official' %}"><input type="button" id='c2' class="btn btn-primary btn-sm" value="Official"></a>
 			</th>
 
 			<th scope="col">
-				<a href="{% url 'transfers' %}"><button class="btn btn-primary btn-sm">Transfers</button></a>
+				<a href="{% url 'transfers' %}"><input type="button" id='c3' class="btn btn-primary btn-sm" value="Transfers"></a>
 			</th>
 			<th scope="col">
-				<a href="{% url 'about' %}"><button class="btn btn-primary btn-sm">About</button></a>
+				<a href="{% url 'about' %}"><input type="button" id='c4' class="btn btn-primary btn-sm" value="About"></a>
 			</th>
 		</tr>
 		</thead>
