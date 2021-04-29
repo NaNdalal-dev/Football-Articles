@@ -14,8 +14,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel = "icon" href = "/media/footballTitle.png"
+  <link rel = "icon" href = "/static/admin/img/logo.jpg"
         type = "image/x-icon">
+   <meta property="og:title" content="{{data.Title}}" />  
+   <meta property="og:image" content="{{data.Thumbnail}}" />  
+   <meta property="og:url" content="{{path}}" /> 
   <style>
  .fa {
   font-size: 30px;
@@ -25,6 +28,7 @@
   </style>
 </head>
 <body>
+
 <header>
 	<table class="table table-stripe">
 		<thead class="thead-dark">

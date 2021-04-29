@@ -5,7 +5,7 @@ class ArticleAttributes(models.Model):
 
 	Author = models.CharField(max_length=20)
 	Title = models.CharField(max_length=100)
-	Thumbnail = models.ImageField()
+	Thumbnail = models.CharField(max_length=200)
 	Article = models.TextField(max_length=10000)
 	Date = models.DateField(auto_now=True)
 	Time = models.TimeField(auto_now=True)

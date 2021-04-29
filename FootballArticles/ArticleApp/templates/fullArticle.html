@@ -6,13 +6,14 @@
 	document.getElementById("{{c}}").style.background = '#ffffff' 
 	</script>
 {% endif %}
+
 <div class="container border border-success">
 
 	<table class="table">
 		<tr>
 			<td scope="row">
 				<div class="container-fluid">
-					<img src="{{data.Thumbnail.url}}" class="rounded mx-auto d-block  img-thumbnail" width="285" height="210" />
+					<img src="{{data.Thumbnail}}" class="rounded mx-auto d-block  img-thumbnail" width="285" height="210" />
 				</div>
 			</td>
 			<td>
@@ -30,6 +31,7 @@
 	</table>
 <div class="container">
 	<article>
+	{% if data.id < 39 %}
 	<p class="text-justify">
 		{% for data in data.Article %}
 			{% if data != '\r' %}
@@ -37,24 +39,33 @@
 			{% endif %}
 		{% endfor %}
 	</p>
+	{% else %}
+	<p class="text-justify">
+		{% for data in data.Article %}
+			{% if data != '\r' %}
+				{{ data }}<br>
+			{% endif %}
+		{% endfor %}
+	</p>
+	{% endif %}
+
 	</article>
 </div>
 </div>
 <div class="container">
-	<h3 class="text-justify text-info">Share</h3>
-	<a href="#" class="btn btn-link"><span class="fa fa-twitter"></span></a>
-	<a href="mailto:" class="btn btn-link"><span class="fa fa-envelope"></span></a>
-	<a href="#" class="btn btn-link"><span class="fa fa-whatsapp"></span></a>
-	<a href="#" class="btn btn-link"><span class="fa fa-facebook"></span></a>
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<h3 class="text-justify text-success">Share</h3>
+		<a href="http://twitter.com/share?text={{data.Title}}&url={{path}}" class="btn btn-link"><span class="fa fa-twitter"></span></a>
+		<a href="mailto:?subject={{data.Title}}&body={{path}}" class="btn btn-link"><span class="fa fa-envelope"></span></a>
+		<a href="https://api.whatsapp.com/send?phone=&text={{data.Title}}|Link: {{path}}" class="btn btn-link"><span class="fa fa-whatsapp"></span></a>
+	</nav>
 </div>
 <div class="container">
 	<a href="mailto:nd90981@gmail.com?subject=Report on:{{data.Title}}|{{data.id}}" target="_blank" class="btn btn-link">
-		<h5 class="text-justify text-danger far fa-envelope">Report an issue</h5>
+		<h5 class="text-justify text-danger far fa-envelope">Report This Article</h5>
 		<h5 class="text-justify text-danger fas fa-exclamation-triangle"></h5>
 	</a>
 	<br>
-	    <span onclick="window.print()" class="btn btn-info btn-sm fa fa-print">
-	    </span>
 </div>
 <br>
 <hr>
